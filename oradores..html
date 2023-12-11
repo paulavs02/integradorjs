@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <imput id="nombre">
+        <imput id="apellido">
+        <imput id="mail">
+        <imput id ="tema">
+        <button id="grabar">
+            Grabar
+        </button>
+    </form>
+    <script>
+        const nuevoOrador = ()=>{
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const mail = document.getElementById('mail').value;
+            const tema = document.getElementById('tema').value;
+
+            //post al servidor
+            //preparo la petgit icion
+            const respuesta = fetch('https:regres.in/api/users?page=2');
+            //intento resolver problema
+            respuesta 
+                .then(response => response.json())
+                .then(users => {
+                 //actualizar el div del html con la info
+                     dibujarTabla(users)
+                 })
+                .catch(error => console.log(error))
+          }
+        document.getElementById('btnGrabar',nuevoOrador);
+        
+    </script>
+
+</body>
+</html>
